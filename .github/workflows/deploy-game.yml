@@ -20,15 +20,16 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Extract Plugin.zip + assets.zip + media.zip (semua digabung ke staging yang sama)
+      - name: Extract Plugin.zip + assets.zip + media.zip+ Online_menu.zip (semua digabung ke staging yang sama)
         run: |
           mkdir -p staging
           unzip -o Plugin.zip -d staging
           unzip -o assets.zip -d staging
           unzip -o media.zip -d staging
+          unzip -o Online_menu.zip -d staging
           echo "Total file hasil extract: $(find staging -type f | wc -l)"
-          echo "Isi folder staging (sampai 4 level ke dalam):"
-          find staging -maxdepth 4
+          echo "Isi folder staging (sampai 5 level ke dalam):"
+          find staging -maxdepth 5
 
       - name: Cari lokasi index.html yang sebenarnya
         id: findroot
