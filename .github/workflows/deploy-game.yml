@@ -26,7 +26,6 @@ jobs:
           unzip -o Plugin.zip -d staging
           unzip -o assets.zip -d staging
           unzip -o media.zip -d staging
-          unzip -o Online_menu.zip -d staging
           echo "Total file hasil extract: $(find staging -type f | wc -l)"
           echo "Isi folder staging (sampai 5 level ke dalam):"
           find staging -maxdepth 5
